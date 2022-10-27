@@ -240,7 +240,7 @@ namespace Demo
 
 			while( itor != end )
 			{
-				// Leave a margin between adjacents cells so they're not too tight each other
+				// Leave a margin between adjacent cells so they're not too tight each other
 				(*itor)->m_margin = 5.0f;
 				// Expend the width of the widget to cover all of the width that is left
 				// available to us. In this case the layout is vertical, thus each widget

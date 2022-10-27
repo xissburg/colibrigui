@@ -6,6 +6,7 @@
 #include "OgrePrerequisites.h"
 
 #include "Compositor/Pass/OgreCompositorPassProvider.h"
+#include "ColibriGui/Ogre/OgreHlmsColibri.h"
 
 namespace Ogre
 {

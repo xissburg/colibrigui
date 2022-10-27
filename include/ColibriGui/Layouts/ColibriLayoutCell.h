@@ -60,7 +60,7 @@ namespace Colibri
 		/// A cell is only allowed to steal from other cells of equal or lower priority.
 		uint8_t		m_priority;
 
-		/// When true, the size of the cell will expanded to fit the entire cell.
+		/// When true, the size of the cell will be expanded to fit the entire cell.
 		/// Otherwise, it will be equal to the cell size or smaller
 		///
 		/// If this value is false:

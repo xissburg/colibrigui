@@ -2,6 +2,7 @@
 #include "ColibriGui/Ogre/CompositorPassColibriGui.h"
 #include "ColibriGui/Ogre/CompositorPassColibriGuiDef.h"
 #include "ColibriGui/ColibriManager.h"
+#include "ColibriGui/Ogre/OgreHlmsColibri.h"
 
 #include "Compositor/OgreCompositorNode.h"
 #include "Compositor/OgreCompositorWorkspace.h"

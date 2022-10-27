@@ -4,6 +4,7 @@
 #include "OgreHeaderPrefix.h"
 
 #include "Compositor/Pass/OgreCompositorPassDef.h"
+#include "ColibriGui/Ogre/OgreHlmsColibri.h"
 
 namespace Ogre
 {
