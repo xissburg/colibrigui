@@ -16,3 +16,6 @@ Dependencies/Ogre
 Dependencies/build_result/
 
 .DS_Store
+
+.vscode
+.cache
