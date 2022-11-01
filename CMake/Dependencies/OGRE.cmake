@@ -188,15 +188,15 @@ else()
 endif()
 
 # Ogre config
-include_directories( "${OGRE_SOURCE}/OgreMain/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/OgreMain/include" )
 
 # Ogre includes
-include_directories( "${OGRE_BINARIES}/include" )
-include_directories( "${OGRE_SOURCE}/Components/Hlms/Common/include" )
-include_directories( "${OGRE_SOURCE}/Components/Hlms/Unlit/include" )
-include_directories( "${OGRE_SOURCE}/Components/Hlms/Pbs/include" )
-include_directories( "${OGRE_SOURCE}/Components/Atmosphere/include" )
-include_directories( "${OGRE_SOURCE}/Components/Overlay/include" )
+include_directories( SYSTEM "${OGRE_BINARIES}/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/Components/Hlms/Common/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/Components/Hlms/Unlit/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/Components/Hlms/Pbs/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/Components/Atmosphere/include" )
+include_directories( SYSTEM "${OGRE_SOURCE}/Components/Overlay/include" )
 
 # Parse OgreBuildSettings.h to see if it's a static build
 set( OGRE_DEPENDENCY_LIBS "" )
@@ -228,7 +228,7 @@ if( NOT IOS )
 		message( "Could not find SDL2. https://www.libsdl.org/" )
 	else()
 		message( STATUS "Found SDL2" )
-		include_directories( ${SDL2_INCLUDE_DIR} )
+		include_directories( SYSTEM ${SDL2_INCLUDE_DIR} )
 		set( OGRE_DEPENDENCY_LIBS ${OGRE_DEPENDENCY_LIBS} ${SDL2_LIBRARY} )
 	endif()
 endif()
@@ -253,7 +253,7 @@ if( OGRE_STATIC )
 			${OGRE_LIBRARIES}
 			debug RenderSystem_Metal${OGRE_STATIC}${OGRE_DEBUG_SUFFIX}
 			optimized RenderSystem_Metal${OGRE_STATIC} )
-		include_directories( "${OGRE_SOURCE}/RenderSystems/Metal/include" )
+		include_directories( SYSTEM "${OGRE_SOURCE}/RenderSystems/Metal/include" )
 	endif()
 endif()
 
