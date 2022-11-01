@@ -1,5 +1,6 @@
 
 #include "ColibriGui/ColibriRenderable.h"
+#include <OGRE/OgreColourValue.h>
 
 #include "CommandBuffer/OgreCommandBuffer.h"
 #include "CommandBuffer/OgreCbDrawCall.h"
@@ -10,7 +11,9 @@
 #include "Vao/OgreVertexArrayObject.h"
 #include "OgreRenderQueue.h"
 #include "OgreHlms.h"
+#include "OgreHlmsManager.h"
 #include "OgreHlmsDatablock.h"
+#include "OgreHlmsUnlitDatablock.h"
 
 #include "ColibriGui/ColibriWindow.h"
 #include "ColibriGui/ColibriManager.h"
@@ -101,6 +104,36 @@ namespace Colibri
 			m_colour = m_stateInformation[m_currentState].defaultColour;
 
 		setClipBordersMatchSkin();
+	}
+	//-------------------------------------------------------------------------
+	void Renderable::setEmptySkin()
+	{
+    	Ogre::Root *root = getManager()->getRoot();
+		Ogre::IdString materialName = "EmptySkin";
+		Ogre::Hlms *hlms = root->getHlmsManager()->getHlms(Ogre::HLMS_UNLIT);
+		Ogre::HlmsDatablock *datablock = hlms->getDatablock(materialName);
+
+		if (!datablock) {
+			Ogre::HlmsMacroblock macroblock;
+			macroblock.mDepthCheck = false;
+			datablock = hlms->createDatablock(materialName, "EmptyMaterial", macroblock, {}, {});
+		}
+
+		Ogre::HlmsUnlitDatablock *unlitDatablock = static_cast<Ogre::HlmsUnlitDatablock *>(datablock);
+		unlitDatablock->setColour(Ogre::ColourValue(1, 1, 1, 1));
+		setDatablock(unlitDatablock);
+
+		for (size_t i = 0; i < Colibri::States::NumStates; ++i) {
+			auto &stateInfo = m_stateInformation[i];
+			memset(&stateInfo, 0, sizeof(stateInfo));
+			stateInfo.materialName = materialName;
+			stateInfo.centerAspectRatio = 1;
+			stateInfo.defaultColour = Ogre::ColourValue(1, 1, 1, 1);
+
+			for (size_t j = 0; j < Colibri::GridLocations::NumGridLocations; ++j) {
+				stateInfo.uvTopLeftBottomRight[j] = {0.0009765625, 0.0009765625, 0.999023437, 0.999023437};
+			}
+		}
 	}
 	//-------------------------------------------------------------------------
 	void Renderable::setSkinPack( Ogre::IdString skinName )

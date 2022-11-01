@@ -168,7 +168,7 @@ namespace Colibri
 
 		bool getOverrideSkinColour() const;
 
-		/** Sets an individual skin (not a pack!) to be used during a specifc state
+		/** Sets an individual skin (not a pack!) to be used during a specific state.
 
 			A skin pack is instead a collection of different skins, one for each state.
 			To set a pack use setSkinPack.
@@ -182,6 +182,8 @@ namespace Colibri
 			The state to use, use special value States::NumStates to set this skin to all states
 		*/
 		void setSkin( Ogre::IdString skinName, States::States forState = States::NumStates );
+
+		void setEmptySkin();
 
 		void setSkinPack( Ogre::IdString skinPackName );
 
