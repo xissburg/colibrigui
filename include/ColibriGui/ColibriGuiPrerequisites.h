@@ -31,7 +31,10 @@
 
 #include <stdint.h>
 #include <math.h>
+
+#if defined( _MSC_VER ) && _MSC_VER < 1800
 #include "math_round.h"
+#endif
 
 COLIBRI_ASSUME_NONNULL_BEGIN
 
