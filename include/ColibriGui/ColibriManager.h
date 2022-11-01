@@ -20,7 +20,7 @@ namespace Colibri
 	public:
 		virtual ~LogListener();
 
-		virtual void log( const char *text, Colibri::LogSeverity::LogSeverity severity ) {}
+		virtual void log( const char *colibri_nonnull text, Colibri::LogSeverity::LogSeverity severity ) {}
 	};
 
 	/**
@@ -34,7 +34,7 @@ namespace Colibri
 		/** See SDL_SetClipboardText. We just send a null-terminated UTF8 string
 		@param text
 		*/
-		virtual void setClipboardText( const char *text )		{}
+		virtual void setClipboardText( const char *colibri_nonnull text )		{}
 
 		/** See SDL_GetClipboardText and SDL_HasClipboardText
 		@param outText
@@ -250,6 +250,7 @@ namespace Colibri
 		void setOgre( Ogre::Root * colibri_nullable root,
 					  Ogre::VaoManager * colibri_nullable vaoManager,
 					  Ogre::SceneManager * colibri_nullable sceneManager );
+		Ogre::Root* getRoot() { return m_root; }
 		Ogre::ObjectMemoryManager* getOgreObjectMemoryManager()		{ return m_objectMemoryManager; }
 		Ogre::SceneManager* getOgreSceneManager()					{ return m_sceneManager; }
 		Ogre::VertexArrayObject* getVao()							{ return m_vao; }
