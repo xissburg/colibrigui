@@ -40,7 +40,7 @@ namespace Ogre
 	/** @ingroup Api_Backend
 	@class HlmsColibri
 		Overrides HlmsUnlit
-		That way wecan create shaders specifically tailored for our UI widgets, while also
+		That way we can create shaders specifically tailored for our UI widgets, while also
 		using vanilla Unlit for everything else. But text rendering requires special shaders,
 		that is different from UI widgets and from regular entities. To identify them, we overloaded
 		calculateHashForPreCreate (which gets called when a Renderable is assigned a new

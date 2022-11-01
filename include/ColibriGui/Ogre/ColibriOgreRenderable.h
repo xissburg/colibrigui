@@ -17,7 +17,7 @@ namespace Ogre
 		Only Windows have their own Vao, which they share with their
 		children (except child windows).
 
-		This is an Ogre3D specifc class needed to render the widgets on screen.
+		This is an Ogre3D specific class needed to render the widgets on screen.
 	*/
 	class ColibriOgreRenderable : public MovableObject, public Renderable
 	{

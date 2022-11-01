@@ -239,7 +239,7 @@ namespace Ogre
 						" You've put a v2 object in "
 						"the wrong RenderQueue ID (which is set to be compatible with "
 						"v1::Entity). Do not mix v2 and v1 objects",
-						"ColibriOgreRenderable::getRenderOperation" );
+						"ColibriOgreRenderable::getWorldTransforms" );
 	}
 	//-----------------------------------------------------------------------------------
 	bool ColibriOgreRenderable::getCastsShadows(void) const
@@ -249,6 +249,6 @@ namespace Ogre
 						" You've put a v2 object in "
 						"the wrong RenderQueue ID (which is set to be compatible with "
 						"v1::Entity). Do not mix v2 and v1 objects",
-						"ColibriOgreRenderable::getRenderOperation" );
+						"ColibriOgreRenderable::getCastsShadows" );
 	}
 }

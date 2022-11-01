@@ -61,7 +61,7 @@ namespace Colibri
 	{
 		LayoutCellVec	m_cells;
 	public:
-		/// When true, a 4x3 table becomes 3x4, with elements tranposed.
+		/// When true, a 4x3 table becomes 3x4, with elements transposed.
 		/// i.e. the m_numColumns will still be the same value 4, but actually contains the rows,
 		/// and getNumRows will still return 3, but actually contains the columns.
 		bool m_transpose;

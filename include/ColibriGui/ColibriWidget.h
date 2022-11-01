@@ -149,7 +149,7 @@ namespace Colibri
 		/// m_breadthFirst. You must set the parent window's m_breadthFirst of
 		/// all those buttons in order to work.
 		///
-		/// @remark	PUBLIC MEMEBER: CAN BE EDITED DIRECTLY
+		/// @remark	PUBLIC MEMBER: CAN BE EDITED DIRECTLY
 		/// @remark	This value affects children. If this->m_breadthFirst is set to
 		///			false, it may still be drawn as breadth first if any of our
 		///			parents has this value set to true

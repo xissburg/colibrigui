@@ -30,7 +30,7 @@ namespace Colibri
 	public:
 		/// True to layout all cells in the first line as a column
 		/// There will 'm_numLines' columns.
-		/// Calling addCell consecutively and asuming B is bigger than the rest and m_numLines = 2 then:
+		/// Calling addCell consecutively and assuming B is bigger than the rest and m_numLines = 2 then:
 		///		A D
 		///		B E
 		///		B
@@ -41,7 +41,7 @@ namespace Colibri
 		///
 		/// False to layout all cells in the first line as a row
 		/// There will 'm_numLines' rows.
-		/// Calling addCell consecutively and asuming B is bigger than the rest and m_numLines = 2 then:
+		/// Calling addCell consecutively and assuming B is bigger than the rest and m_numLines = 2 then:
 		///		A B B C
 		///		D E   F
 		///
